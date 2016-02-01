@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/settings_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_grey_300"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ca.uqac.florentinth.speakerauthentication.SettingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/recording_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Inputs">
+
+            <EditText
+                android:id="@+id/recording_time_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/recording_time"
+                android:inputType="numberDecimal"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/chunk_length"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recording_time"
+            android:layout_marginTop="50dp"
+            android:theme="@style/Inputs">
+
+            <EditText
+                android:id="@+id/chunk_length_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/chunk_length"
+                android:inputType="numberDecimal"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chunk_length"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/distance_from_center_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="6dp"
+                android:text="Distance from center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/md_grey_900"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/distance_from_center_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="6dp"
+                android:text="200m"
+                android:textColor="@color/md_light_blue_500"
+                android:textSize="16sp">
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/seekbar_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="30dp">
+            </SeekBar>
+
+            <TextView
+                android:id="@+id/start_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seekbar_distance"
+                android:layout_marginTop="8dp"
+                android:text="100m">
+            </TextView>
+
+            <TextView
+                android:id="@+id/end_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/seekbar_distance"
+                android:layout_marginTop="8dp"
+                android:text="500m"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/check_white"
+        android:theme="@style/FaB"/>
+
+</RelativeLayout>

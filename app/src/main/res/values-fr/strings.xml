@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Application -->
+    <string name="app_name">"Speaker Authentication"</string>
+    <string name="create_activity_name">"Nouveau compte utilisateur"</string>
+    <string name="settings_activity_name">"Paramètres"</string>
+    <!-- Generic -->
+    <string name="ok_label">"OK"</string>
+    <string name="alert_title_thanks">"MERCI"</string>
+    <string name="add_label">"AJOUTER"</string>
+    <!-- Permissions -->
+    <string name="external_storage_permission_granted">"Les permissions d\'accès au stockage externe ont été <font fgcolor="#03A9F4"><b>accordées</b></font>"</string>
+    <string name="external_storage_permission_denied">"Les permissions d\'accès au stockage externe ont été <font fgcolor="#03A9F4"><b>refusées</b></font>"</string>
+    <string name="external_storage_permission_rationale">"L\'application necessite l\'accès au stockage externe pour fonctionner correctement"</string>
+    <string name="record_audio_permission_granted">"Les permissions d\'enregistrement audio ont été <font fgcolor="#03A9F4"><b>accordées</b></font>"</string>
+    <string name="record_audio_permission_denied">"Les permissions d\'enregistrement audio ont été <font fgcolor="#03A9F4"><b>refusées</b></font>"</string>
+    <string name="record_audio_permission_rationale">"L\'application doit pouvoir enregistrer du son pour fonctionner correctement"</string>
+    <string name="location_permission_granted">"Les permissions d\'accès aux données de localisation ont été <font fgcolor="#03A9F4"><b>accordées</b></font>"</string>
+    <string name="location_permission_denied">"Les permissions d\'accès aux données de localisation ont été <font fgcolor="#03A9F4"><b>refusées</b></font>"</string>
+    <string name="location_permission_rationale">"L\'application necessite l\'accès à vos données de localisation pour fonctionner correctement"</string>
+    <!-- MainActivity && CreateActivity -->
+    <string name="hint_username">"Nom d\'utilisateur"</string>
+    <string name="hint_password">"Mot de passe"</string>
+    <string name="username_special_chars_error">"Désolé le nom d\'utilisateur ne doit contenir que des <font fgcolor="#03A9F4"><b>caratères alphanumériques</b></font>"</string>
+    <string name="username_empty_error">"Désolé le nom d\'utilisateur ne peut pas être <font fgcolor="#03A9F4"><b>vide</b></font>"</string>
+    <string name="username_length_error">"Désolé la longueur du nom d\'utilisateur doit être <font fgcolor="#03A9F4"><b>d\'au moins 3</b></font>"</string>
+    <string name="password_empty_error">"Désolé le mot de passe ne peut pas être <font fgcolor="#03A9F4"><b>vide</b></font>"</string>
+    <string name="password_length_error">"Désolé la longueur du mot de passe doit être  <font fgcolor="#03A9F4"><b>d\'au moins 6</b></font>"</string>
+    <!-- MainActivity -->
+    <string name="btn_login">"Connexion"</string>
+    <string name="btn_new_account">"Nouveau compte"</string>
+    <string name="login_failed">"Désolé la connexion a <font fgcolor="#03A9F4"><b>échouée</b></font>"</string>
+    <!-- CreateActivy -->
+    <string name="radio_female">"Femme"</string>
+    <string name="radio_male">"Homme"</string>
+    <string name="btn_create">"Créer mon compte"</string>
+    <!-- MenuActivity -->
+    <string name="btn_logout">"Déconnexion"</string>
+    <string name="btn_training">"Entraîner la voix"</string>
+    <string name="btn_recognition">"Identification"</string>
+    <string name="btn_settings">"Modifier les paramètres"</string>
+    <string name="btn_location">"Modifier les localisations"</string>
+    <!-- RecordingActivity -->
+    <string name="tts_label">"L\'enregistrement est terminé"</string>
+    <string name="countdown_init_label">"Démarrer l\'enregistrement"</string>
+    <string name="countdown_run_label">"secondes restantes"</string>
+    <!-- WAVSplitting -->
+    <string name="loading_dialog_title">"Patientez un instant..."</string>
+    <string name="loading_dialog_message">"Nous scindons le fichier audio en de plus petites parties"</string>
+    <!-- TrainingDataset -->
+    <string name="loading_dialog_init_message">"Nous écrivons le dataset : "</string>
+    <string name="loading_dialog_conversion">"Nous convertissons le dataset"</string>
+    <string name="loading_dialog_files">"Nous déplaçons les fichiers"</string>
+    <!-- Finish Training Prompt -->
+    <string name="finish_learning">"Tout est prêt. Nous sommes désormais capable de reconnaître votre voix."</string>
+    <!-- AccessActivity -->
+    <string name="access_denied">"Désolé nous ne pouvons pas reconnaître votre voix sans un entraînement préalable"</string>
+    <string name="train_action"><font fgcolor="#03A9F4"><b>Entraîner</b></font></string>
+    <!-- SettingsActivity -->
+    <string name="recording_time">"Temps d\'enregistrement (secondes)"</string>
+    <string name="chunk_length">"Taille des subdivisions (secondes)"</string>
+    <string name="recording_time_error">"Le temps d\'enregistrement doit au moins être de :"</string>
+    <string name="chunk_length_error">"La taille des subdivisions doit au moins être de : "</string>
+    <string name="distance_from_center_error">"La distance minimum de confiance par rapport à votre localisation doit au moins être de : "</string>
+    <!-- LocationActivity -->
+    <string name="nothing_msg">"Aucune localisation n\'a encore été ajoutée"</string>
+    <string name="existing_location">"Cette localisation a <font fgcolor="#03A9F4"><b>déjà été ajoutée</b></font>"</string>
+    <string name="location_added">"Nouvelle localisation ajoutée <font fgcolor="#03A9F4"><b>avec succès</b></font>"</string>
+    <string name="location_label_empty">"Désolé le label de la localisation ne peut pas être <font fgcolor="#03A9F4"><b>vide</b></font>"</string>
+    <string name="location_label_format">"Désolé le label de la localisation ne peut contenique que des <font fgcolor="#03A9F4"><b>caractères alphabétiques</b></font>"</string>
+    <string name="deleted_msg">a été <font fgcolor="#03A9F4"><b>supprimée avec succès</b></font></string>
+    <!-- Prompt Location -->
+    <string name="location_label_hint">Label de la localisation</string>
+</resources>

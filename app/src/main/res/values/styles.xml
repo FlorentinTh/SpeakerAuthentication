@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/md_indigo_500</item>
+        <item name="colorPrimaryDark">@color/md_indigo_700</item>
+        <item name="colorAccent">@color/md_light_blue_500</item>
+        <item name="android:textColorPrimary">@color/md_grey_900</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="RaisedButtonLight">
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:background">@drawable/raised_button_light</item>
+    </style>
+
+    <style name="RaisedButton">
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:background">@drawable/raised_button</item>
+    </style>
+
+    <style name="LoginInput" parent="AppTheme">
+        <item name="android:textColor">@color/md_light_blue_500</item>
+        <item name="android:textColorHint">@color/md_white_1000</item>
+        <item name="colorControlNormal">@color/md_white_1000</item>
+        <item name="colorControlActivated">@color/md_light_blue_500</item>
+        <item name="colorControlHighlight">@color/md_light_blue_500</item>
+    </style>
+
+    <style name="Inputs" parent="AppTheme">
+        <item name="android:textColor">@color/md_grey_900</item>
+        <item name="android:textColorHint">@color/md_grey_900</item>
+        <item name="colorControlNormal">@color/md_grey_900</item>
+        <item name="colorControlActivated">@color/md_light_blue_500</item>
+        <item name="colorControlHighlight">@color/md_grey_900</item>
+    </style>
+
+    <style name="FaB" parent="AppTheme">
+        <item name="colorAccent">@color/md_indigo_700</item>
+    </style>
+
+</resources>

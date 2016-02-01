@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Application -->
+    <string name="app_name">Speaker Authentication</string>
+    <string name="create_activity_name">New Account</string>
+    <string name="settings_activity_name">Settings</string>
+    <!-- Generic -->
+    <string name="ok_label">OK</string>
+    <string name="alert_title_thanks">THANKS</string>
+    <string name="add_label">ADD</string>
+    <!-- Permissions -->
+    <string name="external_storage_permission_granted">External storage permissions <font fgcolor="#03A9F4"><b>granted</b></font></string>
+    <string name="external_storage_permission_denied">External storage permissions <font fgcolor="#03A9F4"><b>denied</b></font></string>
+    <string name="external_storage_permission_rationale">App requires external storage permissions to function properly</string>
+    <string name="record_audio_permission_granted">Record audio permission <font fgcolor="#03A9F4"><b>granted</b></font></string>
+    <string name="record_audio_permission_denied">Record audio permission <font fgcolor="#03A9F4"><b>denied</b></font></string>
+    <string name="record_audio_permission_rationale">App requires record audio permission to function properly</string>
+    <string name="location_permission_granted">Location permissions <font fgcolor="#03A9F4"><b>granted</b></font></string>
+    <string name="location_permission_denied">Location permissions <font fgcolor="#03A9F4"><b>denied</b></font></string>
+    <string name="location_permission_rationale">App requires location permissions to function properly</string>
+    <!-- MainActivity && CreateActivity -->
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="username_special_chars_error">Sorry username cannot be filled with <font fgcolor="#03A9F4"><b>non-alphabetic characters</b></font></string>
+    <string name="username_empty_error">Sorry username cannot be <font fgcolor="#03A9F4"><b>empty</b></font></string>
+    <string name="username_length_error">Sorry the length of the username cannot be <font fgcolor="#03A9F4"><b>less than 3</b></font></string>
+    <string name="password_empty_error">Sorry password cannot be <font fgcolor="#03A9F4"><b>empty</b></font></string>
+    <string name="password_length_error">Sorry the length of the password cannot be <font fgcolor="#03A9F4"><b>less than 6</b></font></string>
+    <!-- MainActivity -->
+    <string name="btn_login">Login</string>
+    <string name="btn_new_account">New Account</string>
+    <string name="login_failed">Sorry the login <font fgcolor="#03A9F4"><b>failed</b></font></string>
+    <!-- CreateActivy -->
+    <string name="radio_female">Female</string>
+    <string name="radio_male">Male</string>
+    <string name="btn_create">Create Account</string>
+    <!-- MenuActivity -->
+    <string name="btn_logout">Logout</string>
+    <string name="btn_training">Train voice</string>
+    <string name="btn_recognition">Identification</string>
+    <string name="btn_settings">Manage settings</string>
+    <string name="btn_location">Manage locations</string>
+    <!-- RecordingActivity -->
+    <string name="tts_label">Recording is finish</string>
+    <string name="countdown_init_label">Start recording when ready</string>
+    <string name="countdown_run_label">seconds remaining</string>
+    <!-- WAVSplitting -->
+    <string name="loading_dialog_title">Please wait...</string>
+    <string name="loading_dialog_message">We are splitting audio file into smaller chunks</string>
+    <!-- TrainingDataset -->
+    <string name="loading_dialog_init_message">"We are witting data in the dataset : "</string>
+    <string name="loading_dialog_conversion">We are converting the dataset</string>
+    <string name="loading_dialog_files">We are moving files</string>
+    <!-- Finish Training Prompt -->
+    <string name="finish_learning">Everything is set up. We are now able to recognize your voice.</string>
+    <!-- AccessActivity -->
+    <string name="access_denied">Sorry you cannot try to recognize your voice without train it before</string>
+    <string name="train_action"><font fgcolor="#03A9F4"><b>Train</b></font></string>
+    <!-- SettingsActivity -->
+    <string name="recording_time">Recording Time (seconds)</string>
+    <string name="chunk_length">Chunk Length (seconds)</string>
+    <string name="recording_time_error">Recording time should be at least:</string>
+    <string name="chunk_length_error">Chunk length should be at least:</string>
+    <string name="distance_from_center_error">Distance from center location should be at least:</string>
+    <!-- LocationActivity -->
+    <string name="nothing_msg">You do not set any trusted location</string>
+    <string name="existing_location">This location is <font fgcolor="#03A9F4"><b>already defined</b></font></string>
+    <string name="location_added">New location <font fgcolor="#03A9F4"><b>successfully added</b></font></string>
+    <string name="location_label_empty">Sorry the label of the location cannot be <font fgcolor="#03A9F4"><b>empty</b></font></string>
+    <string name="location_label_format">Sorry the label of the location cannot be filled with <font fgcolor="#03A9F4"><b>non-alphabetic characters</b></font></string>
+    <string name="deleted_msg">was successfully <font fgcolor="#03A9F4"><b>deleted</b></font></string>
+    <!-- Prompt Location -->
+    <string name="location_label_hint">Label of the location</string>
+</resources>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/access_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ca.uqac.florentinth.speakerauthentication.AccessActivity">
+
+    <FrameLayout
+        android:id="@+id/layout_access_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/md_indigo_500"
+        android:elevation="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/access_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:textAllCaps="true"
+            android:textColor="@color/md_white_1000"
+            android:textSize="22dp"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <RelativeLayout
+            android:id="@+id/headset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/headset_result_true"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/true_logo"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/headset_result_false"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/false_logo"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/progress_headset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/md_indigo_700"
+                android:indeterminateTintMode="src_atop"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/headset_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="Is headset plugged"
+                android:textAllCaps="true"
+                android:textColor="@color/md_grey_900"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/voice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headset"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="56dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/voice_result_true"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/true_logo"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/voice_result_false"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/false_logo"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/progress_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/md_indigo_700"
+                android:indeterminateTintMode="src_atop"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/voice_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="Is voice recognized"
+                android:textAllCaps="true"
+                android:textColor="@color/md_grey_900"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/voice"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="56dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/location_result_true"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/true_logo"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/location_result_false"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/false_logo"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/location_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/md_indigo_700"
+                android:indeterminateTintMode="src_atop"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="Is trusted location"
+                android:textAllCaps="true"
+                android:textColor="@color/md_grey_900"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
