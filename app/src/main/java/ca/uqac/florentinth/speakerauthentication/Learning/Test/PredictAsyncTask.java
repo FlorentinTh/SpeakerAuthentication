@@ -16,10 +16,14 @@ public class PredictAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
     private static final String TAG = PredictAsyncTask.class.getSimpleName();
     public AsyncResponse delegate = null;
+
+    private String username;
     private FileInputStream model;
     private FileReader dataset;
 
-    public PredictAsyncTask(FileInputStream model, FileReader dataset, AsyncResponse delegate) {
+    public PredictAsyncTask(String username, FileInputStream model, FileReader dataset,
+                            AsyncResponse delegate) {
+        this.username = username;
         this.model = model;
         this.dataset = dataset;
         this.delegate = delegate;
@@ -31,14 +35,15 @@ public class PredictAsyncTask extends AsyncTask<Void, Void, Boolean> {
         boolean result = false;
 
         try {
-            for(Map.Entry<String, String> entry : learning.makePrediction(model, dataset).entries
-                    ()) {
+            for(Map.Entry<String, String> entry : learning.makePrediction(model, dataset)
+                    .entrySet()) {
 
                 String key = entry.getKey();
                 String value = entry.getValue();
-
-                if(key.equals(value)) {
-                    result = true;
+                if(key.equals(username)) {
+                    if(key.equals(value)) {
+                        result = true;
+                    }
                 }
             }
         } catch(Exception e) {

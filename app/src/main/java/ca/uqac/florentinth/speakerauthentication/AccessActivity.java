@@ -36,7 +36,6 @@ import ca.uqac.florentinth.speakerauthentication.Learning.Test.PredictAsyncTask;
 import ca.uqac.florentinth.speakerauthentication.Logger.Logger;
 import ca.uqac.florentinth.speakerauthentication.Models.User;
 import ca.uqac.florentinth.speakerauthentication.Utils.ConvertUtils;
-import ca.uqac.florentinth.speakerauthentication.Utils.FileUtils;
 
 public class AccessActivity extends Activity {
 
@@ -120,8 +119,6 @@ public class AccessActivity extends Activity {
                 voiceRecorder.stopRecording(username);
                 this.cancel();
 
-                FileUtils.deleteTestingDataset();
-
                 new TestingDatasetBuilderAsyncTask(new File(Environment
                         .getExternalStorageDirectory().getPath(), Folders.getInstance()
                         .getRawAudioFiles()), new File(Environment.getExternalStorageDirectory()
@@ -131,7 +128,7 @@ public class AccessActivity extends Activity {
                     @Override
                     public void finishCallback() {
                         try {
-                            new PredictAsyncTask(new FileInputStream(new File(Environment
+                            new PredictAsyncTask(username, new FileInputStream(new File(Environment
                                     .getExternalStorageDirectory().getPath(), Folders.getInstance
                                     ().getTrainedModel() + "/" + Folders.getInstance()
                                     .getModelName())), new FileReader(new File(Environment

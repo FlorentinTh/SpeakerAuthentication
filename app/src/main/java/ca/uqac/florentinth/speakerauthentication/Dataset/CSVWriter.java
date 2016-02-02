@@ -13,14 +13,17 @@ import java.util.List;
 
 import ca.uqac.florentinth.speakerauthentication.Config.Features;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
+import ca.uqac.florentinth.speakerauthentication.Core.App;
 import ca.uqac.florentinth.speakerauthentication.Models.VoiceSample;
+import ca.uqac.florentinth.speakerauthentication.Utils.JSONUtils;
 
 /**
  * Created by FlorentinTh on 11/12/2015.
  */
 public class CSVWriter {
 
-    //    private static final String TEXT_TO_READ_SOURCE = "data.json";
+    private static final String TRAINING_BASE_DATA = "training_base_data.json";
+    private static final String TESTING_BASE_DATA = "testing_base_data.json";
     private static final String LINE_SEPARATOR = "\n";
 
     private File location;
@@ -45,8 +48,7 @@ public class CSVWriter {
         csvPrinter.close();
     }
 
-    public void writeCSVFileHeader() throws IOException {
-//    public void writeCSVFileHeader(boolean training) throws IOException {
+    public void writeCSVFileHeader(boolean training) throws IOException {
         File[] files = location.listFiles();
 
         if(files.length == 0) {
@@ -62,29 +64,33 @@ public class CSVWriter {
             headerValues[numberFeatures] = "class";
             csvPrinter.printRecord(headerValues);
 
-//            if(training) {
-//                String json = JSONUtils.parseJSONFile(App.getAppContext(), TEXT_TO_READ_SOURCE);
-//                List<VoiceSample> voiceSamples = JSONUtils.JSONToVoiceSampleObject(json);
-//
-//                for (VoiceSample sample : voiceSamples) {
-//                    List<String> record = new ArrayList();
-//                    double[] voiceFeatures = sample.getVoiceFeatures();
-//
-//                    for (int i = 0; i < voiceFeatures.length; i++) {
-//                        record.add(String.valueOf(voiceFeatures[i]));
-//                    }
-//
-//                    record.add(sample.getClassName());
-//                    csvPrinter.printRecord(record);
-//                }
-//            }
+            String json;
+
+            if(training) {
+                json = JSONUtils.parseJSONFile(App.getAppContext(), TRAINING_BASE_DATA);
+            } else {
+                json = JSONUtils.parseJSONFile(App.getAppContext(), TESTING_BASE_DATA);
+            }
+
+            List<VoiceSample> voiceSamples = JSONUtils.JSONToVoiceSampleObject(json);
+
+            for(VoiceSample sample : voiceSamples) {
+                List<String> record = new ArrayList();
+                double[] voiceFeatures = sample.getVoiceFeatures();
+
+                for(int i = 0; i < voiceFeatures.length; i++) {
+                    record.add(String.valueOf(voiceFeatures[i]));
+                }
+
+                record.add(sample.getClassName());
+                csvPrinter.printRecord(record);
+            }
 
             closeCSVFile();
         }
     }
 
-    public void writeCSVFileContent() throws IOException {
-        //public void writeCSVFileContent(boolean training) throws IOException {
+    public void writeCSVFileContent(boolean training) throws IOException {
         File[] files = location.listFiles();
 
         if(files.length > 0) {
@@ -110,8 +116,7 @@ public class CSVWriter {
                         " seems does not exist.");
             }
         } else {
-            writeCSVFileHeader();
-//            writeCSVFileHeader(training);
+            writeCSVFileHeader(training);
         }
     }
 }

@@ -78,13 +78,14 @@ public class SpeakerRecognition<T> {
         if(training) {
             csvWriter = new CSVWriter(Folders.getInstance().getTrainingGeneratedDataset(),
                     voiceSamples);
+            csvWriter.writeCSVFileHeader(true);
+            csvWriter.writeCSVFileContent(true);
         } else {
             csvWriter = new CSVWriter(Folders.getInstance().getTestingGeneratedDataset(),
                     voiceSamples);
+            csvWriter.writeCSVFileHeader(false);
+            csvWriter.writeCSVFileContent(false);
         }
-
-        csvWriter.writeCSVFileHeader();
-        csvWriter.writeCSVFileContent();
 
         synchronized(this) {
             if(!universalVoicePrintWasSetByUser.get()) {

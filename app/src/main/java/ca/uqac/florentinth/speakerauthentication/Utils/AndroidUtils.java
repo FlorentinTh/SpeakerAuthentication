@@ -45,6 +45,7 @@ public abstract class AndroidUtils {
 
     public static void showAlertDialogFinish(final Context context, String title, String msg) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setCancelable(false);
         builder.setTitle(title);
         builder.setMessage(msg);
 

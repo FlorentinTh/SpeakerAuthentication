@@ -1,14 +1,13 @@
 package ca.uqac.florentinth.speakerauthentication.Learning;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import weka.classifiers.Classifier;
@@ -79,9 +78,9 @@ public class Learning {
         outputStream.close();
     }
 
-    public Multimap<String, String> makePrediction(FileInputStream trainingModel, FileReader
+    public Map<String, String> makePrediction(FileInputStream trainingModel, FileReader
             testingDataset) throws Exception {
-        Multimap<String, String> predictions = ArrayListMultimap.create();
+        Map<String, String> predictions = new HashMap<>();
 
         ObjectInputStream inputStream = new ObjectInputStream(trainingModel);
         Classifier classifier = (Classifier) inputStream.readObject();

@@ -58,17 +58,6 @@ public abstract class FileUtils {
         file.delete();
     }
 
-    public static void deleteTestingDataset() {
-        String path = Environment.getExternalStorageDirectory().getPath();
-        File[] files = new File(path, Folders.getInstance().getTestingGeneratedDataset())
-                .listFiles();
-        if(files.length > 0) {
-            for(File file : files) {
-                file.delete();
-            }
-        }
-    }
-
     public static String removeChunkNumber(String val) {
         return val.substring(0, val.lastIndexOf("-"));
     }
