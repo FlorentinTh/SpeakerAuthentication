@@ -39,7 +39,8 @@ public class TestingDatasetBuilderAsyncTask extends AsyncTask<String, String, Vo
             for(int i = 0; i < inputFiles.length; i++) {
 
                 String WAVFile = inputFiles[i].getName();
-                String sampleName = FileUtils.removeFileExtension(inputFiles[i].getName());
+                String sampleName = FileUtils.removeFileExtension(FileUtils.removeHeadsetState
+                        (inputFiles[i].getName()));
 
                 if(sampleName.equals(params[0]) && !inputFiles[i].isHidden() && inputFiles[i]
                         .isFile()) {

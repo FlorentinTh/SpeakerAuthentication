@@ -64,6 +64,10 @@ public abstract class FileUtils {
         return val.split("\\.")[0];
     }
 
+    public static String removeHeadsetState(String val) {
+        return val.split("\\-")[0];
+    }
+
     public static void CSVToARFF(File input, File output) throws IOException {
         CSVLoader csvDataset = new CSVLoader();
         csvDataset.setSource(input);

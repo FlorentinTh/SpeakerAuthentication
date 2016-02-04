@@ -103,12 +103,21 @@ public class AccessActivity extends Activity {
 
     private void voiceRecognition() {
         final String username = user.getUsername();
-        voiceRecorder = new VoiceRecorder();
-        voiceRecorder.startRecording(username);
-
         final String dB = sharedPreferences.getString("dB", null);
+        final boolean headsetState = sharedPreferences.getBoolean("headset_state", false);
+        final String headsetValue;
 
-        writeLog(username, user.getGender(), dB, "Recognition");
+        voiceRecorder = new VoiceRecorder();
+
+        if(headsetState == true) {
+            headsetValue = "headset";
+        } else {
+            headsetValue = "no-headset";
+        }
+
+        voiceRecorder.startRecording(username + "-" + headsetValue);
+
+        writeLog(username, user.getGender(), dB, headsetState, "Recognition");
 
         countDownTimer = new CountDownTimer(RECORDING_TIME, TIMER_INTERVAL) {
             @Override
@@ -116,7 +125,7 @@ public class AccessActivity extends Activity {
 
             @Override
             public void onFinish() {
-                voiceRecorder.stopRecording(username);
+                voiceRecorder.stopRecording(username + "-" + headsetValue);
                 this.cancel();
 
                 new TestingDatasetBuilderAsyncTask(new File(Environment
@@ -305,7 +314,8 @@ public class AccessActivity extends Activity {
         return false;
     }
 
-    private void writeLog(String username, int genderID, String dB, String stage) {
+    private void writeLog(String username, int genderID, String dB, boolean headsetState, String
+            stage) {
         String gender = null;
 
         if(genderID == 0) {
@@ -314,7 +324,15 @@ public class AccessActivity extends Activity {
             gender = "Male";
         }
 
-        List<String> values = new ArrayList<>(Arrays.asList(username, gender, dB + "dB", stage));
+        String headsetValue;
+
+        if(headsetState == true) {
+            headsetValue = "Headset-Plugged";
+        } else {
+            headsetValue = "Headset-Unplugged";
+        }
+
+        List<String> values = new ArrayList<>(Arrays.asList(username, gender, dB + "dB", headsetValue, stage));
         Logger.write(values);
     }
 }
