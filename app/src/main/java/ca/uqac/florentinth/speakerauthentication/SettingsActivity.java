@@ -70,7 +70,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         if(distanceFromCenter != -1) {
             seekBarDistance.setProgress(distanceFromCenter);
-            distanceValue.setText(String.valueOf(distanceFromCenter));
+            distanceValue.setText(String.valueOf(distanceFromCenter) + "m");
 
         }
 
