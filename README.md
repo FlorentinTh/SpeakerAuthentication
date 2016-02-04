@@ -31,7 +31,7 @@ Download
 
 Dataset
 ---
-I also make public the dataset we used to conduct the experimentations. <br> You can simply download it over here : <br> _link comming soon_
+I also release the dataset I used to conduct the experimentations. <br> You can simply download it over here : <br> _link comming soon_
 
 [![Download](https://img.shields.io/badge/dataset-2MB-green.svg)]()
 
