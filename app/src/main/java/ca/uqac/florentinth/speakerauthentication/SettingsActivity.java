@@ -80,7 +80,7 @@ public class SettingsActivity extends AppCompatActivity {
                 if(progress < Location.getInstance().getMinDistanceFromCenter()) {
                     seekBar.setProgress(Location.getInstance().getMinDistanceFromCenter());
                 } else {
-                    distanceValue.setText(String.valueOf(progress));
+                    distanceValue.setText(String.valueOf(progress) + "m");
                 }
             }
 

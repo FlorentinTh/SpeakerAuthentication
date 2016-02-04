@@ -5,11 +5,13 @@
 
 ---
 
-This project is an Android application that allows to users to authenticate themselves thanks to their voice. We introduce the idea that the mobile device admits several access privileges such as private, protected and public accesses. In that sense, the whole set of information that is stored on it just cannot be access all of the time. To this end, users can define trusted locations that are checked each time the voice has to be recognized.
+This project is an Android application that enables to users a complete **voice authentication system**. First, I introduce the idea that the mobile device admits several **access privileges**. In that sense, the whole set of information that is stored on it just cannot be access all of the time. Such an approach implies that the user must define a specific access (**private**, **protected** or **public**) for each app installed onto the device. <br> Hence, each time the user has to be authenticated on the system, the decision is made as follows: 
+
+<img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/decision.jpg"/>
 
 More informations
 ---
-As a student member of the **[LIARA](http://liara.uqac.ca/)** laboratory that is affiliated to the « **C**haire de **R**echerche sur l’**I**ntelligence **A**mbiante et les technologies d’**A**ssistance **C**ognitive (**CRIAAC**) » at the « **U**niversité du **Q**uébec **À** **C**hicoutimi (**[UQAC](http://www.uqac.ca/)**) », I worked on this application since January 2015 and it complete my MSc. graduation project.
+As a student member of the **[LIARA](http://liara.uqac.ca/)** laboratory that is affiliated to the « **C**haire de **R**echerche sur l’**I**ntelligence **A**mbiante et les technologies d’**A**ssistance **C**ognitive (**CRIAAC**) » at the « **U**niversité du **Q**uébec **À** **C**hicoutimi (**[UQAC](http://www.uqac.ca/)**) », I worked on this application since January 2015 that was my graduation project to complete my MSc. in computer science. 
 
 Author
 ---
