@@ -1,6 +1,6 @@
 # Speaker Authentication
 
-[![Min SDK](https://img.shields.io/badge/minSDK-14-lightgrey.svg)](https://source.android.com/source/build-numbers.html)
+[![Min SDK](https://img.shields.io/badge/SDK-%3E%3D%2014-orange.svg)](https://source.android.com/source/build-numbers.html)
 [![Licence Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ---
