@@ -17,9 +17,9 @@ Author
 
 Demo
 ---
-<img src="https://raw.githubusercontent.com/iammert/SpeakerAuthentication/master/art/01.png"/> <img src="https://raw.githubusercontent.com/iammert/SpeakerAuthentication/master/art/02.png"/> <img src="https://raw.githubusercontent.com/iammert/SpeakerAuthentication/master/art/03.png"/>
+<img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/01.png"/> <img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/02.png"/> <img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/03.png"/>
 
-<img src="https://raw.githubusercontent.com/iammert/SpeakerAuthentication/master/art/04.png"/> <img src="https://raw.githubusercontent.com/iammert/SpeakerAuthentication/master/art/05.png"/> <img src="https://raw.githubusercontent.com/iammert/SpeakerAuthentication/master/art/06.png"/>
+<img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/04.png"/> <img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/05.png"/> <img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/06.png"/>
 
 Download
 ---
