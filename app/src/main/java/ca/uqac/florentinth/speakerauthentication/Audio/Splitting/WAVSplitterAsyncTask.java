@@ -57,20 +57,23 @@ public class WAVSplitterAsyncTask extends AsyncTask<String, Integer, String> {
                     int framesRead;
 
                     do {
-                        framesRead = wavFile.readFrames(buffer, maxFrameNumberPerFile);
-                        while(chunkCreated < chunkNumber) {
+                        if(chunkCreated < chunkNumber) {
+                            framesRead = wavFile.readFrames(buffer, maxFrameNumberPerFile);
                             WAVFile outputWAVFile = WAVFile.createWAVFile(new File(outputFolder +
-                                            "/" + WAVFileName + "-" + chunkCreated +
-                                            ".wav"), wavFile.getChannelNumber(), framesRead,
-                                    wavFile.getValidBits(), wavFile.getSampleRate());
+                                    "/" + WAVFileName + "-" + chunkCreated +
+                                    ".wav"), wavFile.getChannelNumber(), framesRead, wavFile
+                                    .getValidBits(), wavFile.getSampleRate());
+
 
                             outputWAVFile.writeFrames(buffer, framesRead);
                             outputWAVFile.close();
 
                             chunkCreated++;
                             publishProgress(chunkCreated);
+                        } else {
+                            break;
                         }
-                    } while(framesRead != 0);
+                    } while((framesRead != 0));
 
                     wavFile.close();
 

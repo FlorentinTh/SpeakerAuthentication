@@ -32,18 +32,19 @@ public class PredictAsyncTask extends AsyncTask<Void, Void, Boolean> {
     @Override
     protected Boolean doInBackground(Void... params) {
         Learning learning = new Learning();
+
         boolean result = false;
 
         try {
-            for(Map.Entry<String, String> entry : learning.makePrediction(model, dataset)
-                    .entrySet()) {
 
-                String key = entry.getKey();
+            Map<String, String> map = learning.makePrediction(username, model, dataset);
+
+            for(Map.Entry<String, String> entry : map.entrySet()) {
+
                 String value = entry.getValue();
-                if(key.equals(username)) {
-                    if(key.equals(value)) {
-                        result = true;
-                    }
+
+                if(value.equals(username)) {
+                    result = true;
                 }
             }
         } catch(Exception e) {

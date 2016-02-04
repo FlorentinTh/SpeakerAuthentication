@@ -40,6 +40,9 @@ public class TrainingDatasetBuilderAsyncTask extends AsyncTask<String, String, V
     protected Void doInBackground(String... params) {
         File[] inputFiles = inputFolder.listFiles();
 
+        SpeakerRecognition<String> featureExtraction = new SpeakerRecognition<>(Audio.getInstance
+                ().getSampleRate());
+
         try {
             for(int i = 0; i < inputFiles.length; i++) {
 
@@ -51,8 +54,7 @@ public class TrainingDatasetBuilderAsyncTask extends AsyncTask<String, String, V
 
                     publishProgress(context.getString(R.string.loading_dialog_init_message) +
                             WAVFile);
-                    SpeakerRecognition<String> featureExtraction = new SpeakerRecognition<>(Audio
-                            .getInstance().getSampleRate());
+
                     featureExtraction.createVoicePrintFromFile(sampleName, new File(inputFolder +
                             "/" + WAVFile), true);
                 }
@@ -72,6 +74,7 @@ public class TrainingDatasetBuilderAsyncTask extends AsyncTask<String, String, V
         } catch(Exception e) {
             Log.e(TAG, "[ERROR] error occurs while trying to build training dataset: " + e
                     .getMessage());
+            e.printStackTrace();
         }
 
         return null;

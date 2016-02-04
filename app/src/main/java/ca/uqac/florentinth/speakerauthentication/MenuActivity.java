@@ -74,8 +74,6 @@ public class MenuActivity extends Activity implements GoogleApiClient.Connection
             user = userController.getUserById(idUser);
         }
 
-        Log.i(TAG, String.valueOf(user.getGender()));
-
         initGUI();
         FileUtils.initFolders();
         initSettings();

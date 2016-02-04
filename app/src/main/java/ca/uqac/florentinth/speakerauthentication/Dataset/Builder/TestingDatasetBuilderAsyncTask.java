@@ -1,6 +1,7 @@
 package ca.uqac.florentinth.speakerauthentication.Dataset.Builder;
 
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
@@ -31,6 +32,9 @@ public class TestingDatasetBuilderAsyncTask extends AsyncTask<String, String, Vo
     protected Void doInBackground(String... params) {
         File[] inputFiles = inputFolder.listFiles();
 
+        SpeakerRecognition<String> featureExtraction = new SpeakerRecognition<>(Audio.getInstance
+                ().getSampleRate());
+
         try {
             for(int i = 0; i < inputFiles.length; i++) {
 
@@ -40,13 +44,12 @@ public class TestingDatasetBuilderAsyncTask extends AsyncTask<String, String, Vo
                 if(sampleName.equals(params[0]) && !inputFiles[i].isHidden() && inputFiles[i]
                         .isFile()) {
 
-                    SpeakerRecognition<String> featureExtraction = new SpeakerRecognition<>(Audio
-                            .getInstance().getSampleRate());
                     featureExtraction.createVoicePrintFromFile(sampleName, new File(inputFolder +
                             "/" + WAVFile), false);
                 }
 
-                FileUtils.deleteTestingFile(sampleName);
+                FileUtils.moveTrash(inputFolder, new File(Environment.getExternalStorageDirectory
+                        ().getPath(), Folders.getInstance().getTrashTesting()));
             }
 
             FileUtils.CSVToARFF(new File(outputFolder + "/" + Folders.getInstance()

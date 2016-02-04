@@ -78,7 +78,8 @@ public class Learning {
         outputStream.close();
     }
 
-    public Map<String, String> makePrediction(FileInputStream trainingModel, FileReader
+    public Map<String, String> makePrediction(String username, FileInputStream trainingModel,
+                                              FileReader
             testingDataset) throws Exception {
         Map<String, String> predictions = new HashMap<>();
 
@@ -92,11 +93,12 @@ public class Learning {
             instances.setClassIndex(instances.numAttributes() - 1);
         }
 
-        for(int i = 0; i < instances.numInstances(); i++) {
-            String old = instances.instance(i).stringValue(instances.classIndex());
-            double label = classifier.classifyInstance(instances.instance(i));
-            instances.instance(i).setClassValue(label);
-            predictions.put(old, instances.instance(i).stringValue(instances.classIndex()));
+        int last = instances.numInstances() - 1;
+
+        if(instances.instance(last).stringValue(instances.classIndex()).equals(username)) {
+            double label = classifier.classifyInstance(instances.instance(last));
+            instances.instance(last).setClassValue(label);
+            predictions.put(username, instances.instance(last).stringValue(instances.classIndex()));
         }
 
         return predictions;

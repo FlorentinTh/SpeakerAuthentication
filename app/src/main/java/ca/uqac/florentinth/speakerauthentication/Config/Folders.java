@@ -19,8 +19,10 @@ public class Folders {
     private final String trainedModel = baseDataset + "/model";
     private final String tmpFolder = baseFilesLocation + "/tmp";
     private final String trashFolder = baseFilesLocation + "/trash";
-    private final String trashAudioRaw = trashFolder + "/raw";
-    private final String trashAudioChunk = trashFolder + "/chunks";
+    private final String trashTraining = trashFolder + "/training";
+    private final String trashTesting = trashFolder + "/testing";
+    private final String trashAudioRaw = trashTraining + "/raw";
+    private final String trashAudioChunk = trashTraining + "/chunks";
     private final String datasetFileNameCSV = "dataset.csv";
     private final String datasetFileNameARFF = "dataset.arff";
     private final String modelName = "training.model";
@@ -45,8 +47,8 @@ public class Folders {
 
     public String getTmpFolder() { return tmpFolder; }
 
-    public String getTrashFolder() {
-        return trashFolder;
+    public String getTrashTesting() {
+        return trashTesting;
     }
 
     public String getTrashAudioRaw() {

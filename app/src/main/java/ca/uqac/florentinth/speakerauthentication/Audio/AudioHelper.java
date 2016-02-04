@@ -14,6 +14,7 @@ import ca.uqac.florentinth.speakerauthentication.Models.WAVFile;
  */
 public class AudioHelper {
 
+    private static final String TAG = AudioHelper.class.getSimpleName();
     private static final int BUFFER_SIZE = 8192;
 
     private static short byteArrayToShort(byte[] bytes, int offset, boolean bigEndian) {

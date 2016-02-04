@@ -19,15 +19,17 @@ public abstract class FileUtils {
 
     public static void initFolders() {
         String path = Environment.getExternalStorageDirectory().getPath();
-        File[] folders = new File[] {new File(path, Folders.getInstance().getBaseLogs()), new
-                File(path, Folders.getInstance().getAudioChunks()), new File(path, Folders
-                .getInstance().getRawAudioFiles()), new File(path, Folders.getInstance()
-                .getTrainingGeneratedDataset()), new File(path, Folders.getInstance()
-                .getTestingGeneratedDataset()), new File(path, Folders.getInstance()
-                .getTrainedModel()), new File(path, Folders.getInstance().getTmpFolder()), new
-                File(path, Folders.getInstance().getTrashFolder()), new File(path, Folders
-                .getInstance().getTrashAudioRaw()), new File(path, Folders.getInstance()
-                .getTrashAudioChunk())};
+        File[] folders = new File[] {
+                new File(path, Folders.getInstance().getBaseLogs()),
+                new File(path, Folders.getInstance().getAudioChunks()),
+                new File(path, Folders.getInstance().getRawAudioFiles()),
+                new File(path, Folders.getInstance().getTrainingGeneratedDataset()),
+                new File(path, Folders.getInstance().getTestingGeneratedDataset()),
+                new File(path, Folders.getInstance().getTrainedModel()),
+                new File(path, Folders.getInstance().getTmpFolder()),
+                new File(path, Folders.getInstance().getTrashTesting()),
+                new File(path, Folders.getInstance().getTrashAudioRaw()),
+                new File(path, Folders.getInstance().getTrashAudioChunk())};
 
         for(int i = 0; i < folders.length; i++) {
             if(!folders[i].exists()) {
@@ -53,10 +55,6 @@ public abstract class FileUtils {
         file.delete();
     }
 
-    public static void deleteTestingFile(String sampleName) {
-        File file = new File(getSampleRawFile(sampleName));
-        file.delete();
-    }
 
     public static String removeChunkNumber(String val) {
         return val.substring(0, val.lastIndexOf("-"));
