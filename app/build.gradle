@@ -10,7 +10,6 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-//        multiDexEnabled true_logo
     }
     buildTypes {
         release {
@@ -32,5 +31,4 @@ dependencies {
     //    external libs
     compile files('libs/commons-csv-1.2.jar')
     compile files('libs/weka-3.7.jar')
-    //    compile files('libs/javax_sound.jar')
 }
