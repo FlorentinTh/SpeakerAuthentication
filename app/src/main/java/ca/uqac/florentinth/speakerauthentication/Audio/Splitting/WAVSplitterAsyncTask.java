@@ -8,9 +8,9 @@ import android.util.Log;
 
 import java.io.File;
 
+import ca.uqac.florentinth.speakerauthentication.Audio.WAV.WAVFile;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
-import ca.uqac.florentinth.speakerauthentication.Dataset.Builder.TrainingDatasetBuilderAsyncTask;
-import ca.uqac.florentinth.speakerauthentication.Models.WAVFile;
+import ca.uqac.florentinth.speakerauthentication.Dataset.Builders.TrainingDatasetBuilderAsyncTask;
 import ca.uqac.florentinth.speakerauthentication.R;
 import ca.uqac.florentinth.speakerauthentication.Utils.FileUtils;
 

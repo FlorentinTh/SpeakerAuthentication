@@ -8,7 +8,7 @@ import android.util.Log;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 
-import ca.uqac.florentinth.speakerauthentication.Learning.Classifiers;
+import ca.uqac.florentinth.speakerauthentication.Learning.Classifier;
 import ca.uqac.florentinth.speakerauthentication.Learning.Learning;
 import ca.uqac.florentinth.speakerauthentication.R;
 import ca.uqac.florentinth.speakerauthentication.Utils.AndroidUtils;
@@ -18,7 +18,7 @@ import ca.uqac.florentinth.speakerauthentication.Utils.AndroidUtils;
  */
 public class TrainClassifierAsyncTask extends AsyncTask<Void, Void, Void> {
 
-    private static final Classifiers classifier = Classifiers.KNN;
+    private static final Classifier classifier = Classifier.KNN;
 
     private Context context;
     private ProgressDialog loadingDialog;

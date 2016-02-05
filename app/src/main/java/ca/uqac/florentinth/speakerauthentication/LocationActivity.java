@@ -29,11 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import ca.uqac.florentinth.speakerauthentication.Controllers.LocationController;
-import ca.uqac.florentinth.speakerauthentication.Controllers.UserLocationController;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.LocationController;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.UserLocationController;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.Location;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.UserLocation;
 import ca.uqac.florentinth.speakerauthentication.GUI.Adapters.LocationRecyclerViewAdapter;
-import ca.uqac.florentinth.speakerauthentication.Models.Location;
-import ca.uqac.florentinth.speakerauthentication.Models.UserLocation;
 import ca.uqac.florentinth.speakerauthentication.Utils.StringUtils;
 
 public class LocationActivity extends Activity implements GoogleApiClient.ConnectionCallbacks,

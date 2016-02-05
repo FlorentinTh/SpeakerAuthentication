@@ -25,8 +25,8 @@ import java.io.File;
 
 import ca.uqac.florentinth.speakerauthentication.Audio.SoundMeter;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
-import ca.uqac.florentinth.speakerauthentication.Controllers.UserController;
-import ca.uqac.florentinth.speakerauthentication.Models.User;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.UserController;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.User;
 import ca.uqac.florentinth.speakerauthentication.Utils.ConvertUtils;
 import ca.uqac.florentinth.speakerauthentication.Utils.FileUtils;
 

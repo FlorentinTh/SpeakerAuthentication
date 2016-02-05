@@ -15,11 +15,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import ca.uqac.florentinth.speakerauthentication.Controllers.LocationController;
-import ca.uqac.florentinth.speakerauthentication.Controllers.UserLocationController;
 import ca.uqac.florentinth.speakerauthentication.Core.App;
-import ca.uqac.florentinth.speakerauthentication.Models.Location;
-import ca.uqac.florentinth.speakerauthentication.Models.UserLocation;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.LocationController;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.UserLocationController;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.Location;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.UserLocation;
 import ca.uqac.florentinth.speakerauthentication.R;
 
 /**

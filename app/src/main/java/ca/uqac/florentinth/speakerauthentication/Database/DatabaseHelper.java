@@ -4,9 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import ca.uqac.florentinth.speakerauthentication.Models.Location;
-import ca.uqac.florentinth.speakerauthentication.Models.User;
-import ca.uqac.florentinth.speakerauthentication.Models.UserLocation;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.Location;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.User;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.UserLocation;
 
 /**
  * Created by FlorentinTh on 1/21/2016.

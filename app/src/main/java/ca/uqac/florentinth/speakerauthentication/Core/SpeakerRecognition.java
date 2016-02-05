@@ -12,11 +12,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import ca.uqac.florentinth.speakerauthentication.Audio.AudioHelper;
 import ca.uqac.florentinth.speakerauthentication.Audio.PreProcessing.AudioNormalizer;
 import ca.uqac.florentinth.speakerauthentication.Audio.PreProcessing.VoiceActivityDetection;
+import ca.uqac.florentinth.speakerauthentication.Audio.WAV.WAVFileException;
 import ca.uqac.florentinth.speakerauthentication.Config.Audio;
 import ca.uqac.florentinth.speakerauthentication.Config.Features;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
 import ca.uqac.florentinth.speakerauthentication.Dataset.CSVWriter;
-import ca.uqac.florentinth.speakerauthentication.Exceptions.WAVFileException;
 import ca.uqac.florentinth.speakerauthentication.Features.FeaturesExtraction;
 import ca.uqac.florentinth.speakerauthentication.Models.VoiceSample;
 

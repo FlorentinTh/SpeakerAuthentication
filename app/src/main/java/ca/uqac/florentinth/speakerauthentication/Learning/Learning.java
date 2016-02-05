@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.lazy.IBk;
@@ -21,7 +20,7 @@ import weka.core.Instances;
  */
 public class Learning {
 
-    private Classifier classifier;
+    private weka.classifiers.Classifier classifier;
     private double kappa;
     private double fMeasure;
     private String confusionMatrix;
@@ -38,12 +37,12 @@ public class Learning {
         return confusionMatrix;
     }
 
-    public void trainClassifier(Classifiers classifier, FileReader dataset, FileOutputStream
+    public void trainClassifier(Classifier classifier, FileReader dataset, FileOutputStream
             model) throws Exception {
         trainClassifier(classifier, dataset, model, 0);
     }
 
-    public void trainClassifier(Classifiers classifier, FileReader trainingDataset,
+    public void trainClassifier(Classifier classifier, FileReader trainingDataset,
                                 FileOutputStream trainingModel, Integer
                                         crossValidationFoldNumber) throws Exception {
         Instances instances = new Instances(new BufferedReader(trainingDataset));
@@ -84,7 +83,8 @@ public class Learning {
         Map<String, String> predictions = new HashMap<>();
 
         ObjectInputStream inputStream = new ObjectInputStream(trainingModel);
-        Classifier classifier = (Classifier) inputStream.readObject();
+        weka.classifiers.Classifier classifier = (weka.classifiers.Classifier) inputStream
+                .readObject();
         inputStream.close();
 
         Instances instances = new Instances(new BufferedReader(testingDataset));

@@ -16,8 +16,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
-import ca.uqac.florentinth.speakerauthentication.Controllers.UserController;
-import ca.uqac.florentinth.speakerauthentication.Models.User;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.UserController;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.User;
 import ca.uqac.florentinth.speakerauthentication.Utils.CryptUtils;
 import ca.uqac.florentinth.speakerauthentication.Utils.StringUtils;
 

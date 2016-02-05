@@ -24,17 +24,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import ca.uqac.florentinth.speakerauthentication.Access.Accesses;
+import ca.uqac.florentinth.speakerauthentication.Accesses.Access;
 import ca.uqac.florentinth.speakerauthentication.Audio.HeadsetStateReceiver;
 import ca.uqac.florentinth.speakerauthentication.Audio.Recording.VoiceRecorder;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
-import ca.uqac.florentinth.speakerauthentication.Controllers.LocationController;
-import ca.uqac.florentinth.speakerauthentication.Controllers.UserController;
-import ca.uqac.florentinth.speakerauthentication.Controllers.UserLocationController;
-import ca.uqac.florentinth.speakerauthentication.Dataset.Builder.TestingDatasetBuilderAsyncTask;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.LocationController;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.UserController;
+import ca.uqac.florentinth.speakerauthentication.Database.Controllers.UserLocationController;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.Location;
+import ca.uqac.florentinth.speakerauthentication.Database.Models.User;
+import ca.uqac.florentinth.speakerauthentication.Dataset.Builders.TestingDatasetBuilderAsyncTask;
 import ca.uqac.florentinth.speakerauthentication.Learning.Test.PredictAsyncTask;
 import ca.uqac.florentinth.speakerauthentication.Logger.Logger;
-import ca.uqac.florentinth.speakerauthentication.Models.User;
 import ca.uqac.florentinth.speakerauthentication.Utils.ConvertUtils;
 
 public class AccessActivity extends Activity {
@@ -155,14 +156,14 @@ public class AccessActivity extends Activity {
                                         setVoiceStateTrue();
                                         if(headsetState) {
                                             if(isTrustedLocation) {
-                                                showPrivilegeAccess(Accesses.PRIVATE);
+                                                showPrivilegeAccess(Access.PRIVATE);
                                             }
                                         } else {
-                                            showPrivilegeAccess(Accesses.PROTECTED);
+                                            showPrivilegeAccess(Access.PROTECTED);
                                         }
                                     } else {
                                         setVoiceStateFalse();
-                                        showPrivilegeAccess(Accesses.PUBLIC);
+                                        showPrivilegeAccess(Access.PUBLIC);
                                     }
                                 }
                             }).execute();
@@ -247,7 +248,7 @@ public class AccessActivity extends Activity {
         }
     }
 
-    private void showPrivilegeAccess(Accesses access) {
+    private void showPrivilegeAccess(Access access) {
         accessLayout.setVisibility(View.VISIBLE);
         accessText.setText(String.valueOf(access) + " access granted");
         switch(access) {
@@ -295,10 +296,9 @@ public class AccessActivity extends Activity {
         locationText.setTextColor(getResources().getColor(R.color.md_red_500));
     }
 
-    private boolean isTrustedLocation(double latitude, double longitude, List<ca.uqac.florentinth
-            .speakerauthentication.Models.Location> locations) {
+    private boolean isTrustedLocation(double latitude, double longitude, List<Location> locations) {
         if(locations.size() > 0) {
-            for(ca.uqac.florentinth.speakerauthentication.Models.Location location : locations) {
+            for(Location location : locations) {
                 float[] distance = new float[2];
                 android.location.Location.distanceBetween(latitude, longitude, location
                         .getLatitude(), location.getLongitude(), distance);

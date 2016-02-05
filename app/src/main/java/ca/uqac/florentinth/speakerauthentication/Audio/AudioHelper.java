@@ -5,16 +5,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import ca.uqac.florentinth.speakerauthentication.Audio.WAV.WAVFile;
+import ca.uqac.florentinth.speakerauthentication.Audio.WAV.WAVFileException;
 import ca.uqac.florentinth.speakerauthentication.Config.Audio;
-import ca.uqac.florentinth.speakerauthentication.Exceptions.WAVFileException;
-import ca.uqac.florentinth.speakerauthentication.Models.WAVFile;
 
 /**
  * Created by FlorentinTh on 11/12/2015.
  */
-public class AudioHelper {
+public abstract class AudioHelper {
 
-    private static final String TAG = AudioHelper.class.getSimpleName();
     private static final int BUFFER_SIZE = 8192;
 
     private static short byteArrayToShort(byte[] bytes, int offset, boolean bigEndian) {
