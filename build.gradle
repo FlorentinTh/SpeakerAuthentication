@@ -1,4 +1,6 @@
-apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'coveralls'
 
 buildscript {
     repositories {
@@ -6,12 +8,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:0.4.0'
     }
-}
-
-coveralls {
-    jacocoReportPath = "${buildDir}/reports/coverage/debug/report.xml"
 }
 
 allprojects {
@@ -24,7 +22,10 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-tasks.coveralls {
-    dependsOn 'connectedAndroidTest'
-    onlyIf { System.env.'CI' }
+sourceSets {
+    main {
+        java.srcDirs = ['src']
+    }
 }
+
+coveralls.jacocoReportPath = 'build/reports/coverage/debug/report.xml'

@@ -26,4 +26,4 @@ before_script:
 script:
     - android list target
     - ./gradlew build
-    - ./gradlew connectedAndroidTest coveralls
+    - ./gradlew coveralls
