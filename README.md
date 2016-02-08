@@ -8,7 +8,7 @@
 
 This project is an Android application that enables to users a complete **voice authentication system**. First, I introduce the idea that the mobile device admits several **access privileges**. In that sense, the whole set of information that is stored on it just cannot be access all of the time. Such an approach implies that the user must define a specific access (**private**, **protected** or **public**) for each app installed onto the device. <br> Hence, each time the user has to be authenticated on the system, the decision is made as follows: 
 
-<img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/decision.jpg"/>
+<img src="https://raw.githubusercontent.com/FlorentinTh/SpeakerAuthentication/master/art/decision.jpg"/>
 
 More informations
 ---
@@ -20,9 +20,9 @@ Author
 
 Demo
 ---
-<img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/01.png"/> <img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/02.png"/> <img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/03.png"/>
+<img src="https://raw.githubusercontent.com/FlorentinTh/SpeakerAuthentication/master/art/01.png"/> <img src="https://raw.githubusercontent.com/FlorentinTh/SpeakerAuthentication/master/art/02.png"/> <img src="https://raw.githubusercontent.com/FlorentinTh/SpeakerAuthentication/master/art/03.png"/>
 
-<img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/04.png"/> <img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/05.png"/> <img src="https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/art/06.png"/>
+<img src="https://raw.githubusercontent.com/FlorentinTh/SpeakerAuthentication/master/art/04.png"/> <img src="https://raw.githubusercontent.com/FlorentinTh/SpeakerAuthentication/master/art/05.png"/> <img src="https://raw.githubusercontent.com/FlorentinTh/SpeakerAuthentication/master/art/06.png"/>
 
 Download
 ---
