@@ -1,7 +1,7 @@
 # Speaker Authentication
 
 [![Build Status](https://api.travis-ci.org/FlorentinTh/SpeakerAuthentication.svg?branch=master)](https://travis-ci.org/FlorentinTh/SpeakerAuthentication)
-[![Min SDK](https://img.shields.io/badge/SDK-%3E%3D%2014-orange.svg)](https://source.android.com/source/build-numbers.html)
+[![API](https://img.shields.io/badge/API-14%2B-orange.svg)](https://source.android.com/source/build-numbers.html)
 [![Licence Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ---
