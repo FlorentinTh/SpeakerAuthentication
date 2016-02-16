@@ -20,84 +20,103 @@
         android:layout_height="120dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/logo_white"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/username"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
-        android:layout_marginTop="36dp"
-        android:theme="@style/LoginInput">
+        android:layout_marginTop="56dp">
 
-        <EditText
-            android:id="@+id/username_input"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/username"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_username"
-            android:inputType="textPersonName"
-            android:textColor="@color/md_light_blue_500"/>
+            android:orientation="horizontal">
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:theme="@style/LoginInput">
 
-    <LinearLayout
-        android:id="@+id/password"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/username"
-        android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/username_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_username"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/md_light_blue_500"/>
 
-        <android.support.design.widget.TextInputLayout
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/password"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/username"
-            android:layout_marginTop="36dp"
-            android:layout_weight="1"
-            android:theme="@style/LoginInput">
+            android:layout_marginTop="26dp"
+            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/password_input"
-                android:layout_width="match_parent"
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_password"
-                android:inputType="textPassword"
-                android:textColor="@color/md_light_blue_500"/>
+                android:layout_below="@+id/username"
+                android:layout_weight="1"
+                android:theme="@style/LoginInput">
 
-        </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/password_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/md_light_blue_500"/>
 
-        <ImageView
-            android:id="@+id/visibility"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="49dp"
-            android:src="@drawable/eye_white"/>
+            </android.support.design.widget.TextInputLayout>
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/visibility"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/eye_white"/>
 
-    <Button
-        android:id="@+id/btn_login"
-        style="@style/RaisedButton"
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_marginTop="36dp"
-        android:text="@string/btn_login"
-        android:textColor="@color/md_white_1000"
-        android:textSize="18dp"/>
+        android:layout_alignParentBottom="true">
 
-    <Button
-        android:id="@+id/btn_new_account"
-        style="@style/RaisedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_login"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:text="@string/btn_new_account"
-        android:textColor="@color/md_white_1000"
-        android:textSize="18dp"/>
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/RaisedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_login"
+            android:textColor="@color/md_white_1000"
+            android:textSize="18dp"/>
+
+        <Button
+            android:id="@+id/btn_new_account"
+            style="@style/RaisedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:text="@string/btn_new_account"
+            android:textColor="@color/md_white_1000"
+            android:textSize="18dp"/>
+    </RelativeLayout>
 
 </RelativeLayout>

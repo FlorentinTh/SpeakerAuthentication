@@ -4,6 +4,8 @@
     <string name="app_name">"Speaker Authentication"</string>
     <string name="create_activity_name">"Nouveau compte utilisateur"</string>
     <string name="settings_activity_name">"Paramètres"</string>
+    <!-- Google Play Services -->
+    <string name="google_play_services">"Google Play Services doit être installé"</string>
     <!-- Generic -->
     <string name="ok_label">"OK"</string>
     <string name="alert_title_thanks">"MERCI"</string>

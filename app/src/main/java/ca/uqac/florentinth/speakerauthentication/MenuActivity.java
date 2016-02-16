@@ -205,8 +205,6 @@ public class MenuActivity extends Activity implements GoogleApiClient.Connection
             longitude = location.getLongitude();
             sharedPreferences.edit().putString("latitude", String.valueOf(latitude)).putString
                     ("longitude", String.valueOf(longitude)).apply();
-        } else {
-            Log.e(TAG, "Couldn't get the location. Make sure location is enabled on the device.");
         }
     }
 
@@ -292,5 +290,20 @@ public class MenuActivity extends Activity implements GoogleApiClient.Connection
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.i(TAG, "Connection failed: [CODE: " + connectionResult.getErrorCode() + "]");
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == PLAY_SERVICES_RESOLUTION_REQUEST) {
+            if(resultCode == RESULT_OK) {
+                if(!googleApiClient.isConnecting() && !googleApiClient.isConnected()) {
+                    googleApiClient.connect();
+                }
+            } else if(resultCode == RESULT_CANCELED) {
+                Snackbar.make(view, getString(R.string.google_play_services), Snackbar
+                        .LENGTH_LONG).show();
+                finish();
+            }
+        }
     }
 }

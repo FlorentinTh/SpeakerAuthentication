@@ -102,7 +102,8 @@ public class SettingsActivity extends AppCompatActivity {
     private void updateSettings() {
         int recordingTimeValue = Integer.valueOf(recordingTimeInput.getText().toString());
         int chunkLengthValue = Integer.valueOf(chunkLengthInput.getText().toString());
-        int distanceFromCenterValue = Integer.valueOf(distanceValue.getText().toString());
+        int distanceFromCenterValue = Integer.valueOf(distanceValue.getText().subSequence(0, 3)
+                .toString());
 
         if(recordingTimeValue < Audio.getInstance().getMinRecordingTime()) {
             Snackbar.make(view, getString(R.string.recording_time_error) + " " + String.valueOf

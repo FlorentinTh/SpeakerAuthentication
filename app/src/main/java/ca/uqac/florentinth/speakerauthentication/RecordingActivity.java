@@ -12,7 +12,6 @@ import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
@@ -157,8 +156,6 @@ public class RecordingActivity extends Activity implements CalculateVolumeListen
 
     private void writeLog(String username, int genderID, String dB, String stage) {
         String gender = null;
-
-        Log.i(TAG, String.valueOf(genderID));
 
         if(genderID == 0) {
             gender = "Female";

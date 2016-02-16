@@ -2,7 +2,7 @@
 
 [![Build Status](https://api.travis-ci.org/FlorentinTh/SpeakerAuthentication.svg?branch=master)](https://travis-ci.org/FlorentinTh/SpeakerAuthentication)
 [![API](https://img.shields.io/badge/API-14%2B-orange.svg)](https://source.android.com/source/build-numbers.html)
-[![Languages](https://img.shields.io/badge/language-Fr%20%26%20En-orange.svg)]()
+[![Languages](https://img.shields.io/badge/languages-Fr%20%26%20En-orange.svg)]()
 [![Licence Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ---
