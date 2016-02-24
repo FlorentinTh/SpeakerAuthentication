@@ -64,6 +64,8 @@
     <string name="recording_time_error">Recording time should be at least:</string>
     <string name="chunk_length_error">Chunk length should be at least:</string>
     <string name="distance_from_center_error">Distance from center location should be at least:</string>
+    <string name="radio_quiet">Quiet</string>
+    <string name="radio_noisy">Noisy</string>
     <!-- LocationActivity -->
     <string name="nothing_msg">You do not set any trusted location</string>
     <string name="existing_location">This location is <font fgcolor="#03A9F4"><b>already defined</b></font></string>

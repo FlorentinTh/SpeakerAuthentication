@@ -64,6 +64,8 @@
     <string name="recording_time_error">"Le temps d\'enregistrement doit au moins être de :"</string>
     <string name="chunk_length_error">"La taille des subdivisions doit au moins être de : "</string>
     <string name="distance_from_center_error">"La distance minimum de confiance par rapport à votre localisation doit au moins être de : "</string>
+    <string name="radio_quiet">Silencieux</string>
+    <string name="radio_noisy">Bruyant</string>
     <!-- LocationActivity -->
     <string name="nothing_msg">"Aucune localisation n\'a encore été ajoutée"</string>
     <string name="existing_location">"Cette localisation a <font fgcolor="#03A9F4"><b>déjà été ajoutée</b></font>"</string>

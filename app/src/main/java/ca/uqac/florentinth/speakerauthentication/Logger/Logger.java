@@ -28,10 +28,10 @@ public abstract class Logger {
             bufferedWriter = new BufferedWriter(new FileWriter(file, true));
 
             for(int i = 0; i < values.size(); i++) {
-                if(i == 0) {
+                if(i == values.size() - 1) {
                     bufferedWriter.write(values.get(i));
                 } else {
-                    bufferedWriter.write(" " + values.get(i));
+                    bufferedWriter.write(values.get(i) + ";");
                 }
             }
 

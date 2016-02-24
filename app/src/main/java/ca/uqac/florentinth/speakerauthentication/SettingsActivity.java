@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -26,11 +27,12 @@ public class SettingsActivity extends AppCompatActivity {
     private EditText recordingTimeInput, chunkLengthInput;
     private SeekBar seekBarDistance;
     private TextView distanceValue;
+    private RadioButton quietRadio, noisyRadio;
     private FloatingActionButton btnEdit;
 
     private SharedPreferences sharedPreferences;
 
-    private int recordingTime, chunkLength, distanceFromCenter;
+    private int recordingTime, chunkLength, distanceFromCenter, environment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class SettingsActivity extends AppCompatActivity {
         recordingTime = sharedPreferences.getInt("recordingTime", -1);
         chunkLength = sharedPreferences.getInt("chunkLength", -1);
         distanceFromCenter = sharedPreferences.getInt("distanceFromCenter", -1);
+        environment = sharedPreferences.getInt("id_environment", -1);
 
         initGUI();
     }
@@ -56,6 +59,8 @@ public class SettingsActivity extends AppCompatActivity {
         chunkLengthInput = (EditText) findViewById(R.id.chunk_length_input);
         seekBarDistance = (SeekBar) findViewById(R.id.seekbar_distance);
         distanceValue = (TextView) findViewById(R.id.distance_from_center_value);
+        quietRadio = (RadioButton) findViewById(R.id.radio_quiet);
+        noisyRadio = (RadioButton) findViewById(R.id.radio_noisy);
         btnEdit = (FloatingActionButton) findViewById(R.id.btn_edit);
 
         seekBarDistance.setMax(Location.getInstance().getMaxDistanceFromCenter());
@@ -91,6 +96,18 @@ public class SettingsActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
+
+        switch(environment) {
+            case 0:
+                quietRadio.setChecked(true);
+                break;
+            case 1:
+                noisyRadio.setChecked(true);
+                break;
+            default:
+                quietRadio.setChecked(true);
+        }
+
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +138,13 @@ public class SettingsActivity extends AppCompatActivity {
             sharedPreferences.edit().putInt("chunkLength", ConvertUtils.secToMillis
                     (chunkLengthValue)).apply();
             sharedPreferences.edit().putInt("distanceFromCenter", distanceFromCenterValue).apply();
+
+            if(quietRadio.isChecked()) {
+                sharedPreferences.edit().putInt("id_environment", 0).apply();
+            } else {
+                sharedPreferences.edit().putInt("id_environment", 1).apply();
+            }
+
             finish();
         }
     }

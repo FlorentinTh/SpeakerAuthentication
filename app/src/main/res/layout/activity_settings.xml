@@ -52,6 +52,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <RelativeLayout
+            android:id="@+id/distance"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/chunk_length"
@@ -107,6 +108,48 @@
                 android:layout_below="@+id/seekbar_distance"
                 android:layout_marginTop="8dp"
                 android:text="500m"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/env_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/distance"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp">
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_quiet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="@string/radio_quiet"
+                    android:textColor="@color/md_grey_900"
+                    android:textSize="18sp"/>
+
+                <RadioButton
+                    android:id="@+id/radio_noisy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/radio_noisy"
+                    android:textColor="@color/md_grey_900"
+                    android:textSize="18sp"/>
+
+            </RadioGroup>
+
         </RelativeLayout>
 
     </RelativeLayout>

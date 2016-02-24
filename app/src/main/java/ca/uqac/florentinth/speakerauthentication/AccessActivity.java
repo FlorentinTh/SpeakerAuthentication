@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
@@ -106,6 +107,7 @@ public class AccessActivity extends Activity {
         final String username = user.getUsername();
         final String dB = sharedPreferences.getString("dB", null);
         final boolean headsetState = sharedPreferences.getBoolean("headset_state", false);
+        final Integer environmentID = sharedPreferences.getInt("id_environment", -1);
         final String headsetValue;
 
         voiceRecorder = new VoiceRecorder();
@@ -118,7 +120,7 @@ public class AccessActivity extends Activity {
 
         voiceRecorder.startRecording(username + "-" + headsetValue);
 
-        writeLog(username, user.getGender(), dB, headsetState, "Recognition");
+        writeLog(username, user.getGender(), environmentID, dB, headsetState, "Recognition");
 
         countDownTimer = new CountDownTimer(RECORDING_TIME, TIMER_INTERVAL) {
             @Override
@@ -253,13 +255,25 @@ public class AccessActivity extends Activity {
         accessText.setText(String.valueOf(access) + " access granted");
         switch(access) {
             case PUBLIC:
-                accessText.setTextColor(getColor(R.color.md_red_500));
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    accessText.setTextColor(getColor(R.color.md_red_500));
+                } else {
+                    accessText.setTextColor(this.getResources().getColor(R.color.md_red_500));
+                }
                 break;
             case PROTECTED:
-                accessText.setTextColor(getColor(R.color.md_orange_500));
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    accessText.setTextColor(getColor(R.color.md_orange_500));
+                } else {
+                    accessText.setTextColor(this.getResources().getColor(R.color.md_orange_500));
+                }
                 break;
             case PRIVATE:
-                accessText.setTextColor(getColor(R.color.md_green_500));
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    accessText.setTextColor(getColor(R.color.md_green_500));
+                } else {
+                    accessText.setTextColor(this.getResources().getColor(R.color.md_green_500));
+                }
                 break;
         }
     }
@@ -314,17 +328,28 @@ public class AccessActivity extends Activity {
         return false;
     }
 
-    private void writeLog(String username, int genderID, String dB, boolean headsetState, String
+    private void writeLog(String username, int genderID, int environmentID, String dB, boolean
+            headsetState, String
             stage) {
-        String gender = null;
+        String gender = null, environment = null, headsetValue;
 
-        if(genderID == 0) {
-            gender = "Female";
-        } else if(genderID == 1) {
-            gender = "Male";
+        switch(genderID) {
+            case 0:
+                gender = "Female";
+                break;
+            case 1:
+                gender = "Male";
+                break;
         }
 
-        String headsetValue;
+        switch(environmentID) {
+            case 0:
+                environment = "Quiet";
+                break;
+            case 1:
+                environment = "Noisy";
+                break;
+        }
 
         if(headsetState == true) {
             headsetValue = "Headset-Plugged";
@@ -332,7 +357,8 @@ public class AccessActivity extends Activity {
             headsetValue = "Headset-Unplugged";
         }
 
-        List<String> values = new ArrayList<>(Arrays.asList(username, gender, dB + "dB", headsetValue, stage));
+        List<String> values = new ArrayList<>(Arrays.asList(username, gender, environment, dB +
+                "dB", headsetValue, stage));
         Logger.write(values);
     }
 }
