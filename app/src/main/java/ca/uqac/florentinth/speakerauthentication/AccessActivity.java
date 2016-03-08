@@ -109,6 +109,7 @@ public class AccessActivity extends Activity {
         final boolean headsetState = sharedPreferences.getBoolean("headset_state", false);
         final Integer environmentID = sharedPreferences.getInt("id_environment", -1);
         final String headsetValue;
+        final String environmentValue;
 
         voiceRecorder = new VoiceRecorder();
 
@@ -118,7 +119,14 @@ public class AccessActivity extends Activity {
             headsetValue = "no-headset";
         }
 
-        voiceRecorder.startRecording(username + "-" + headsetValue);
+        if(environmentID == 0) {
+            environmentValue = "quiet";
+        } else {
+            environmentValue = "noisy";
+        }
+
+
+        voiceRecorder.startRecording(username + "-" + headsetValue + "-" + environmentValue);
 
         writeLog(username, user.getGender(), environmentID, dB, headsetState, "Recognition");
 
@@ -128,7 +136,7 @@ public class AccessActivity extends Activity {
 
             @Override
             public void onFinish() {
-                voiceRecorder.stopRecording(username + "-" + headsetValue);
+                voiceRecorder.stopRecording(username + "-" + headsetValue + "-" + environmentValue);
                 this.cancel();
 
                 new TestingDatasetBuilderAsyncTask(new File(Environment
