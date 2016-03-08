@@ -28,6 +28,11 @@ public class HeadsetStateReceiver extends BroadcastReceiver {
 
     private SharedPreferences sharedPreferences;
 
+    private boolean view;
+
+    public HeadsetStateReceiver(boolean view) {
+        this.view = view;
+    }
 
     private void switchState(Context context, boolean state) {
         headsetProgess = (ProgressBar) ((Activity) context).findViewById(R.id.progress_headset);
@@ -61,10 +66,14 @@ public class HeadsetStateReceiver extends BroadcastReceiver {
 
             if((state != -1) && (micro != -1)) {
                 if(state == 1 && micro == 1) {
-                    switchState(context, true);
+                    if(view) {
+                        switchState(context, true);
+                    }
                     sharedPreferences.edit().putBoolean("headset_state", true).apply();
                 } else {
-                    switchState(context, false);
+                    if(view) {
+                        switchState(context, false);
+                    }
                     sharedPreferences.edit().putBoolean("headset_state", false).apply();
                 }
             } else {

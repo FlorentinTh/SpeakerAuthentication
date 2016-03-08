@@ -2,6 +2,7 @@ package ca.uqac.florentinth.speakerauthentication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.media.AudioManager;
@@ -23,6 +24,7 @@ import com.google.android.gms.location.LocationServices;
 
 import java.io.File;
 
+import ca.uqac.florentinth.speakerauthentication.Audio.HeadsetStateReceiver;
 import ca.uqac.florentinth.speakerauthentication.Audio.SoundMeter;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
 import ca.uqac.florentinth.speakerauthentication.Database.Controllers.UserController;
@@ -52,6 +54,8 @@ public class MenuActivity extends Activity implements GoogleApiClient.Connection
     private GoogleApiClient googleApiClient;
     private Location location;
 
+    private HeadsetStateReceiver receiver = null;
+
     private User user;
     private boolean isListening = false;
     private double latitude, longitude;
@@ -62,6 +66,8 @@ public class MenuActivity extends Activity implements GoogleApiClient.Connection
 
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        startHeadsetStateListener();
 
         if(checkPlayServices()) {
             buildGoogleApiClient();
@@ -91,12 +97,14 @@ public class MenuActivity extends Activity implements GoogleApiClient.Connection
     protected void onResume() {
         startSoundListening();
         checkPlayServices();
+        startHeadsetStateListener();
         getCoordinates();
         super.onResume();
     }
 
     @Override
     protected void onPause() {
+        stopHeadsetStateListener();
         stopSoundListening();
         super.onPause();
     }
@@ -111,6 +119,7 @@ public class MenuActivity extends Activity implements GoogleApiClient.Connection
 
     @Override
     protected void onDestroy() {
+        stopHeadsetStateListener();
         stopSoundListening();
         super.onDestroy();
     }
@@ -132,6 +141,21 @@ public class MenuActivity extends Activity implements GoogleApiClient.Connection
     private synchronized void buildGoogleApiClient() {
         googleApiClient = new GoogleApiClient.Builder(this).addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
+    }
+
+    private void startHeadsetStateListener() {
+        if(receiver == null) {
+            IntentFilter receiverFilter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
+            receiver = new HeadsetStateReceiver(false);
+            registerReceiver(receiver, receiverFilter);
+        }
+    }
+
+    private void stopHeadsetStateListener() {
+        if(receiver != null) {
+            unregisterReceiver(receiver);
+            receiver = null;
+        }
     }
 
     private void initGUI() {

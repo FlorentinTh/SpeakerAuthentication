@@ -190,7 +190,7 @@ public class AccessActivity extends Activity {
     private void startHeadsetStateListener() {
         if(receiver == null) {
             IntentFilter receiverFilter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
-            receiver = new HeadsetStateReceiver();
+            receiver = new HeadsetStateReceiver(true);
             registerReceiver(receiver, receiverFilter);
         }
     }
