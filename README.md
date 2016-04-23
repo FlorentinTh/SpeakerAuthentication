@@ -11,6 +11,10 @@ This project is an Android application that enables to users a complete **voice 
 
 <img src="https://raw.githubusercontent.com/FlorentinTh/SpeakerAuthentication/master/art/decision.jpg"/>
 
+Related paper
+---
+_link comming soon_
+
 More information
 ---
 As a student member of the **[LIARA](http://liara.uqac.ca/)** laboratory that is affiliated to the « **C**haire de **R**echerche sur l’**I**ntelligence **A**mbiante et les technologies d’**A**ssistance **C**ognitive (**CRIAAC**) » at the « **U**niversité du **Q**uébec **À** **C**hicoutimi (**[UQAC](http://www.uqac.ca/)**) », I worked on this application since January 2015 that was my graduation project to complete my MSc. in computer science. 
