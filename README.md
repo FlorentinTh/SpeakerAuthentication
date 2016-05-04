@@ -33,7 +33,7 @@ Download
 ---
 **Warning** : this version remains an experimental one that may produce some bugs.
 
-[![Download](https://img.shields.io/badge/nightly-1.0-green.svg)](https://mega.nz/#!z9ghxbaJ!wrWW10i3Z_CCDQXEW4WfV7oZUjyXpfRrbkuTQa6896M)
+[![Download](https://img.shields.io/badge/nightly-1.0-green.svg)](https://mega.nz/#!e0QUlDiR!phpPLlyCQGoDVMjCCwHwXvXqwTGNFkWEn9hMDD_3TgI)
 
 _password: liara_
 
