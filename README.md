@@ -31,16 +31,19 @@ Demo
 
 Download
 ---
-**Warning** : this version remains an experimental one that may produce some bugs. <br> _link comming soon_
+**Warning** : this version remains an experimental one that may produce some bugs.
 
-[![Download](https://img.shields.io/badge/nightly-1.0-green.svg)]()
+[![Download](https://img.shields.io/badge/nightly-1.0-green.svg)](https://mega.nz/#!z9ghxbaJ!wrWW10i3Z_CCDQXEW4WfV7oZUjyXpfRrbkuTQa6896M)
+
+_password: liara_
 
 Dataset
 ---
-I also release the dataset I used to conduct the experimentations. <br> You can simply download it over here : <br> _link comming soon_
+I also release the dataset I used to conduct the experimentations. <br> You can simply download it over here :
 
-[![Download](https://img.shields.io/badge/dataset-2MB-green.svg)]()
+[![Download](https://img.shields.io/badge/download-17KB-green.svg)](https://mega.nz/#!zhxmWSgY!bT4VD71kqWCadP9JTyFeTVp41054PrX176BMmPdkPPg)
 
+_password: liara_
 
 License
 ---
