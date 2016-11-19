@@ -22,15 +22,12 @@ android:
 
 env:
    matrix:
-      - ANDROID_TARGET=android-14
       - ANDROID_TARGET=android-15
       - ANDROID_TARGET=android-16
       - ANDROID_TARGET=android-17
       - ANDROID_TARGET=android-18
       - ANDROID_TARGET=android-19
       - ANDROID_TARGET=android-21
-      #- ANDROID_TARGET=android-22
-      #- ANDROID_TARGET=android-23
       - ANDROID_TARGET=android-24
 
 before_script:
