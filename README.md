@@ -15,9 +15,9 @@ Related paper
 ---
 _link comming soon_
 
-More information
+Details
 ---
-As a student member of the **[LIARA](http://liara.uqac.ca/)** laboratory that is affiliated to the « **C**haire de **R**echerche sur l’**I**ntelligence **A**mbiante et les technologies d’**A**ssistance **C**ognitive (**CRIAAC**) » at the « **U**niversité du **Q**uébec **À** **C**hicoutimi (**[UQAC](http://www.uqac.ca/)**) », I worked on this application since January 2015 that was my graduation project to complete my MSc. in computer science. 
+As a student member of the **[LIARA](http://liara.uqac.ca/)** laboratory that is affiliated to the « **D**épartement d'**I**nformatique et de **M**athématiques (**[DIM](http://www.uqac.ca/dim/)**) » from the « **U**niversité du **Q**uébec **À** **C**hicoutimi (**[UQAC](http://www.uqac.ca/)**) », I worked on this application since January 2015 that was my graduation project to complete my MSc. in computer science. 
 
 Author
 ---

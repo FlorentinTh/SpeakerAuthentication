@@ -1,5 +1,10 @@
 language: android
 
+notifications:
+  email: false
+
+sudo: false
+
 before_install:
     - chmod +x gradlew
 
@@ -14,6 +19,19 @@ android:
     - extra-android-m2repository
     - addon-google_apis-google-23
     - sys-img-armeabi-v7a-android-21
+
+nv:
+   matrix:
+      - ANDROID_TARGET=android-14
+      - ANDROID_TARGET=android-15
+      - ANDROID_TARGET=android-16
+      - ANDROID_TARGET=android-17
+      - ANDROID_TARGET=android-18
+      - ANDROID_TARGET=android-19
+      - ANDROID_TARGET=android-21
+      #- ANDROID_TARGET=android-22
+      #- ANDROID_TARGET=android-23
+      - ANDROID_TARGET=android-24
 
 before_script:
     - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
