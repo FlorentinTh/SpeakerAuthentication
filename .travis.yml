@@ -5,6 +5,9 @@ notifications:
 
 sudo: false
 
+jdk:
+  - oraclejdk8
+
 before_install:
   - chmod +x gradlew
 
