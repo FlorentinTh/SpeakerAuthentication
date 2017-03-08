@@ -32,7 +32,7 @@ env:
       - ANDROID_TARGET=android-18
       - ANDROID_TARGET=android-19
       - ANDROID_TARGET=android-21
-      - ANDROID_TARGET=android-24
+      #- ANDROID_TARGET=android-25
 
 before_script:
     - echo no | android create avd --force --name test --target $ANDROID_TARGET --abi armeabi-v7a --skin WVGA800
