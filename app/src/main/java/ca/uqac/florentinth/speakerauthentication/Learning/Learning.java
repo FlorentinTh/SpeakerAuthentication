@@ -1,6 +1,7 @@
 package ca.uqac.florentinth.speakerauthentication.Learning;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -14,6 +15,7 @@ import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.lazy.IBk;
 import weka.core.Instances;
+import weka.core.converters.CSVLoader;
 
 /**
  * Copyright 2016 Florentin Thullier.
@@ -49,15 +51,19 @@ public class Learning {
         return confusionMatrix;
     }
 
-    public void trainClassifier(Classifier classifier, FileReader dataset, FileOutputStream
+    public void trainClassifier(Classifier classifier, File dataset, FileOutputStream
             model) throws Exception {
         trainClassifier(classifier, dataset, model, 0);
     }
 
-    public void trainClassifier(Classifier classifier, FileReader trainingDataset,
+    public void trainClassifier(Classifier classifier, File trainingDataset,
                                 FileOutputStream trainingModel, Integer
                                         crossValidationFoldNumber) throws Exception {
-        Instances instances = new Instances(new BufferedReader(trainingDataset));
+
+        CSVLoader csvLoader = new CSVLoader();
+        csvLoader.setSource(trainingDataset);
+
+        Instances instances = csvLoader.getDataSet();
 
         switch(classifier) {
             case KNN:

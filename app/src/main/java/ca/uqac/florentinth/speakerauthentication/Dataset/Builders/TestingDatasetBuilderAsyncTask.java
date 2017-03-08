@@ -9,6 +9,7 @@ import java.io.File;
 import ca.uqac.florentinth.speakerauthentication.Config.Audio;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
 import ca.uqac.florentinth.speakerauthentication.Core.SpeakerRecognition;
+import ca.uqac.florentinth.speakerauthentication.Time;
 import ca.uqac.florentinth.speakerauthentication.Utils.FileUtils;
 
 /**
@@ -37,6 +38,8 @@ public class TestingDatasetBuilderAsyncTask extends AsyncTask<String, String, Vo
         this.inputFolder = inputFolder;
         this.outputFolder = outputFolder;
         this.delegate = delegate;
+
+        Time.start = System.currentTimeMillis();
     }
 
 

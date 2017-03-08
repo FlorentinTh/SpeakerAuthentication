@@ -9,13 +9,13 @@ import android.util.Log;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 
 import ca.uqac.florentinth.speakerauthentication.Config.Audio;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
 import ca.uqac.florentinth.speakerauthentication.Core.SpeakerRecognition;
 import ca.uqac.florentinth.speakerauthentication.Learning.Train.TrainClassifierAsyncTask;
 import ca.uqac.florentinth.speakerauthentication.R;
+import ca.uqac.florentinth.speakerauthentication.Time;
 import ca.uqac.florentinth.speakerauthentication.Utils.FileUtils;
 
 /**
@@ -46,6 +46,8 @@ public class TrainingDatasetBuilderAsyncTask extends AsyncTask<String, String, V
         this.context = context;
         this.inputFolder = inputFolder;
         this.outputFolder = outputFolder;
+
+        Time.start = System.currentTimeMillis();
     }
 
     @Override
@@ -72,11 +74,11 @@ public class TrainingDatasetBuilderAsyncTask extends AsyncTask<String, String, V
                 }
             }
 
-            publishProgress(context.getString(R.string.loading_dialog_conversion));
-
-            FileUtils.CSVToARFF(new File(outputFolder + "/" + Folders.getInstance()
-                    .getDatasetFileNameCSV()), new File(outputFolder + "/" + Folders.getInstance
-                    ().getDatasetFileNameARFF()));
+//            publishProgress(context.getString(R.string.loading_dialog_conversion));
+//
+//            FileUtils.CSVToARFF(new File(outputFolder + "/" + Folders.getInstance()
+//                    .getDatasetFileNameCSV()), new File(outputFolder + "/" + Folders.getInstance
+//                    ().getDatasetFileNameARFF()));
 
             publishProgress(context.getString(R.string.loading_dialog_files));
 
@@ -117,11 +119,15 @@ public class TrainingDatasetBuilderAsyncTask extends AsyncTask<String, String, V
         super.onPostExecute(aVoid);
 
         loadingDialog.dismiss();
+
+        Time.stop = System.currentTimeMillis();
+        Log.e("TIME", "Feature Extraction#1 took: " + String.valueOf(Time.stop - Time.start) + "ms");
+
         try {
-            new TrainClassifierAsyncTask(context, new FileReader(new File(Environment
+            new TrainClassifierAsyncTask(context, new File(Environment
                     .getExternalStorageDirectory().getPath(), Folders.getInstance()
                     .getTrainingGeneratedDataset() + "/" +
-                    Folders.getInstance().getDatasetFileNameARFF())), new FileOutputStream(new
+                    Folders.getInstance().getDatasetFileNameCSV()), new FileOutputStream(new
                     File(Environment.getExternalStorageDirectory().getPath(), Folders.getInstance
                     ().getTrainedModel() + "/" +
                     Folders.getInstance().getModelName()))).execute();

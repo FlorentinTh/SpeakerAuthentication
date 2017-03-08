@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.util.Map;
 
 import ca.uqac.florentinth.speakerauthentication.Learning.Learning;
+import ca.uqac.florentinth.speakerauthentication.Time;
 
 /**
  * Copyright 2016 Florentin Thullier.
@@ -39,6 +40,8 @@ public class PredictAsyncTask extends AsyncTask<Void, Void, Boolean> {
         this.model = model;
         this.dataset = dataset;
         this.delegate = delegate;
+
+        Time.start = System.currentTimeMillis();
     }
 
     @Override

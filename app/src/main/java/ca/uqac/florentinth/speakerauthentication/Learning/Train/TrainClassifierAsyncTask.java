@@ -5,12 +5,13 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 
 import ca.uqac.florentinth.speakerauthentication.Learning.Classifier;
 import ca.uqac.florentinth.speakerauthentication.Learning.Learning;
 import ca.uqac.florentinth.speakerauthentication.R;
+import ca.uqac.florentinth.speakerauthentication.Time;
 import ca.uqac.florentinth.speakerauthentication.Utils.AndroidUtils;
 
 /**
@@ -35,17 +36,19 @@ public class TrainClassifierAsyncTask extends AsyncTask<Void, Void, Void> {
     private Context context;
     private ProgressDialog loadingDialog;
 
-    private FileReader dataset;
+    private File dataset;
     private FileOutputStream model;
     private int foldNumber;
 
-    public TrainClassifierAsyncTask(Context context, FileReader dataset, FileOutputStream model) {
+    public TrainClassifierAsyncTask(Context context, File dataset, FileOutputStream model) {
         this.context = context;
         this.dataset = dataset;
         this.model = model;
+
+        Time.start = System.currentTimeMillis();
     }
 
-    public TrainClassifierAsyncTask(Context context, FileReader dataset, FileOutputStream model,
+    public TrainClassifierAsyncTask(Context context, File dataset, FileOutputStream model,
                                     int foldNumber) {
         this.context = context;
         this.dataset = dataset;
@@ -84,6 +87,10 @@ public class TrainClassifierAsyncTask extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         loadingDialog.dismiss();
+
+        Time.stop = System.currentTimeMillis();
+        Log.e("TIME", "Training took: " + String.valueOf(Time.stop - Time.start) + "ms");
+
         AndroidUtils.showAlertDialogFinish(context, context.getString(R.string
                 .alert_title_thanks), context.getString(R.string.finish_learning));
     }

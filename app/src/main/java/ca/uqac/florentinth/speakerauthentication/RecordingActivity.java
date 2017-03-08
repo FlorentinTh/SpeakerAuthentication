@@ -12,6 +12,7 @@ import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
@@ -161,6 +162,7 @@ public class RecordingActivity extends Activity implements CalculateVolumeListen
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Time.start = System.currentTimeMillis();
                 writeLog(sampleName, gender, dB, "Training");
                 btnStart.setVisibility(View.GONE);
                 countDownTimer.start();
@@ -193,6 +195,9 @@ public class RecordingActivity extends Activity implements CalculateVolumeListen
             @Override
             public void onFinish() {
                 voiceRecorder.stopRecording(sampleName);
+
+                Time.stop = System.currentTimeMillis();
+                Log.e("TIME", "RECORDING#1 took: " + String.valueOf(Time.stop - Time.start) + "ms");
 
                 new WAVSplitterAsyncTask(RecordingActivity.this, new File(Environment
                         .getExternalStorageDirectory().getPath(), Folders.getInstance()

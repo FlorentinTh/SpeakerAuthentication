@@ -96,6 +96,9 @@ public class AccessActivity extends Activity {
 
         initGUI();
         getAllLocations();
+
+        Time.start = System.currentTimeMillis();
+
         voiceRecognition();
     }
 
@@ -154,6 +157,9 @@ public class AccessActivity extends Activity {
                 voiceRecorder.stopRecording(username + "-" + headsetValue + "-" + environmentValue);
                 this.cancel();
 
+                Time.stop = System.currentTimeMillis();
+                Log.e("TIME", "RECORDING#2 took: " + String.valueOf(Time.stop - Time.start) + "ms");
+
                 new TestingDatasetBuilderAsyncTask(new File(Environment
                         .getExternalStorageDirectory().getPath(), Folders.getInstance()
                         .getRawAudioFiles()), new File(Environment.getExternalStorageDirectory()
@@ -163,6 +169,10 @@ public class AccessActivity extends Activity {
                     @Override
                     public void finishCallback() {
                         try {
+
+                            Time.stop = System.currentTimeMillis();
+                            Log.e("TIME", "Feature Extraction#2 took: " + String.valueOf(Time.stop - Time.start) + "ms");
+
                             new PredictAsyncTask(username, new FileInputStream(new File(Environment
                                     .getExternalStorageDirectory().getPath(), Folders.getInstance
                                     ().getTrainedModel() + "/" + Folders.getInstance()
@@ -173,6 +183,9 @@ public class AccessActivity extends Activity {
                                     .AsyncResponse() {
                                 @Override
                                 public void finishCallback(boolean predictResult) {
+
+                                    Time.stop = System.currentTimeMillis();
+                                    Log.e("TIME", "Testing#2 took: " + String.valueOf(Time.stop - Time.start) + "ms");
 
                                     boolean headsetState = sharedPreferences.getBoolean
                                             ("headset_state", false);

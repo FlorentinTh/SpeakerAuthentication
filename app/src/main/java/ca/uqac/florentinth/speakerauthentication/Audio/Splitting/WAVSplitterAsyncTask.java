@@ -12,6 +12,7 @@ import ca.uqac.florentinth.speakerauthentication.Audio.WAV.WAVFile;
 import ca.uqac.florentinth.speakerauthentication.Config.Folders;
 import ca.uqac.florentinth.speakerauthentication.Dataset.Builders.TrainingDatasetBuilderAsyncTask;
 import ca.uqac.florentinth.speakerauthentication.R;
+import ca.uqac.florentinth.speakerauthentication.Time;
 import ca.uqac.florentinth.speakerauthentication.Utils.FileUtils;
 
 /**
@@ -46,6 +47,8 @@ public class WAVSplitterAsyncTask extends AsyncTask<String, Integer, String> {
         this.recordingTime = recordingTime;
         this.chunkLength = chunkLength;
         this.chunkNumber = (int) Math.ceil(this.recordingTime / this.chunkLength);
+
+        Time.start = System.currentTimeMillis();
     }
 
     @Override
@@ -126,6 +129,9 @@ public class WAVSplitterAsyncTask extends AsyncTask<String, Integer, String> {
     protected void onPostExecute(String string) {
         super.onPostExecute(string);
         loadingDialog.dismiss();
+        Time.stop = System.currentTimeMillis();
+        Log.e("TIME", "Splitting took: " + String.valueOf(Time.stop - Time.start) + "ms");
+
         new TrainingDatasetBuilderAsyncTask(context, new File(Environment
                 .getExternalStorageDirectory().getPath(), Folders.getInstance().getAudioChunks())
                 , new File(Environment.getExternalStorageDirectory().getPath(), Folders

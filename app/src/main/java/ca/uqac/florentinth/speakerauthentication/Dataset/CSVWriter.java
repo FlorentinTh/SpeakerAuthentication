@@ -74,7 +74,7 @@ public class CSVWriter {
             }
 
             headerValues[numberFeatures] = "class";
-            csvPrinter.printRecord((Object) headerValues);
+            csvPrinter.printRecord(headerValues);
 
             String json;
 
