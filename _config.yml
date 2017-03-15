@@ -1,0 +1,8 @@
+title: Speaker Authentication
+description: Android application that offer a full speaker-authentication-process enhanced by the location of users.
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-hacker
+
+gems:
+  - jekyll-mentions
