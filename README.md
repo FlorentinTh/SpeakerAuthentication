@@ -13,7 +13,7 @@ This project is an Android application that enables to users a complete **voice 
 
 Related paper
 ---
-_link comming soon_
+**[Thullier, F., Bouchard, B., & Menelas, B. A. J. (2017). _A Text-Independent Speaker Authentication System for Mobile Devices._ Cryptography, 1(3), 16.](http://www.mdpi.com/2410-387X/1/3/16)**
 
 Details
 ---
