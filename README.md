@@ -33,7 +33,7 @@ Download
 ---
 **Warning** : this version remains an experimental one that may produce some bugs.
 
-[![Download](https://img.shields.io/badge/nightly-1.0-green.svg)](https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/speaker-authentication-v1.0-nightly.apk)
+[![Download](https://img.shields.io/badge/nightly-1.0-green.svg)](https://github.com/FlorentinTh/SpeakerAuthentication/raw/master/speaker-authentication-v1.0-nightly.apk)
 
 Dataset
 ---
