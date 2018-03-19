@@ -33,17 +33,13 @@ Download
 ---
 **Warning** : this version remains an experimental one that may produce some bugs.
 
-[![Download](https://img.shields.io/badge/nightly-1.0-green.svg)](https://mega.nz/#!e0QUlDiR!phpPLlyCQGoDVMjCCwHwXvXqwTGNFkWEn9hMDD_3TgI)
-
-_password: liara_
+[![Download](https://img.shields.io/badge/nightly-1.0-green.svg)](https://github.com/FlorentinTh/SpeakerAuthentication/blob/master/speaker-authentication-v1.0-nightly.apk)
 
 Dataset
 ---
 I also release the dataset I used to conduct the experimentation. <br> You can simply download it over here :
 
-[![Download](https://img.shields.io/badge/download-17KB-green.svg)](https://mega.nz/#!zhxmWSgY!bT4VD71kqWCadP9JTyFeTVp41054PrX176BMmPdkPPg)
-
-_password: liara_
+[![Download](https://img.shields.io/badge/download-17KB-green.svg)](https://github.com/FlorentinTh/SpeakerAuthentication/tree/master/datasets)
 
 License
 ---
